@@ -1,14 +1,17 @@
 ﻿#include <iostream>
 #include <vector>
 #include <time.h>
+#include <cmath>
 using namespace std;
 
 
 bool isPrimeBase(int n)
 {
+    if (n % 2 == 0) return false;
     if (n < 2) return false;
     if (n == 2) return true;
-    for (int i = 3; i < n; i++)
+    int p = sqrt(n);
+    for (int i = 3; i < p; i+=2)
         if (n % i == 0) return false;
     return true;
 }
